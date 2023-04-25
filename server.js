@@ -19,6 +19,7 @@ const lista_produtos = {
 
 app.post ('/produtos', function (req, res) {
     const  produto  = req.body;
+    produto.id = lista_produtos.produtos.length + 1;
     lista_produtos.produtos.push(produto);
 
     return res.json(lista_produtos.produtos);
